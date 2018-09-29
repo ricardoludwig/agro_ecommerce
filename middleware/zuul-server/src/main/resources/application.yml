@@ -1,0 +1,38 @@
+zuul:
+#    prefix: /api
+    ignored-services: '*'
+    routes:
+        name:
+#          path: /name/**
+          url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/Ricardo
+          sensitive-headers:
+        age:
+#          path: /age/**
+          url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/age/Ludwig
+          sensitive-headers:
+        inst:
+#          path: /inst/**
+          url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/instances/spring-boot-demo
+          sensitive-headers:
+        ui:
+          url: http://localhost:9001
+          sensitive-headers:
+security:
+  sessions: ALWAYS
+  ignored:
+  - "*.bundle.*"  
+
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: ${EUREKA_URL:http://localhost:7001}/eureka/
+
+---
+spring:
+  profiles: heroku
+eureka:
+  instance:
+    hostname: ${DOMAIN_NAME}:${$PORT}
+    

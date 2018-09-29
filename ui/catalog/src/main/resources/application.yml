@@ -1,0 +1,14 @@
+eureka:
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: ${EUREKA_URL:http://localhost:7001}/eureka/
+
+---
+spring:
+  profiles: heroku
+eureka:
+  instance:
+    hostname: ${DOMAIN_NAME}:${$PORT}
+    

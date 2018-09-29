@@ -1,0 +1,39 @@
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        username: lud
+        password: 123456
+        platform: postgresql
+        url: jdbc:postgresql://localhost:5432/customer_db
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:7001}/eureka/
+
+---
+spring:
+    profiles: heroku
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        username: ${JDBC_DATABASE_USERNAME}
+        password: ${JDBC_DATABASE_PASSWORD}
+        platform: postgresql
+        url: ${JDBC_DATABASE_URL}
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+eureka:
+    instance:
+        hostname: ${DOMAIN_NAME}:${$PORT}

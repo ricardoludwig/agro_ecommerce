@@ -1,0 +1,7 @@
+target/
+.classpath
+.project
+.settings/
+data/customerDB.log
+data/customerDB.properties
+data/customerDB.script

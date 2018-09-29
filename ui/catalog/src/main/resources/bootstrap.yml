@@ -1,0 +1,5 @@
+server:
+  port: ${PORT:9001}
+spring:
+  application:
+    name: catalog-ui-server
