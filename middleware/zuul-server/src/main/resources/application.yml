@@ -15,7 +15,7 @@ zuul:
           url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/instances/spring-boot-demo
           sensitive-headers:
         ui:
-          url: http://localhost:9001
+          url: https://ricardoludwig-catalog.herokuapp.com
           sensitive-headers:
 security:
   sessions: ALWAYS
