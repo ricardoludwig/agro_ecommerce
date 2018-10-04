@@ -11,7 +11,7 @@ security:
             
 spring:
     datasource:
-#        data: classpath:/sql/data.sql
+        data: classpath:/sql/data.sql
         driver-class-name: org.postgresql.Driver
         username: lud
         password: 123456
@@ -22,7 +22,7 @@ spring:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
         generate-ddl: false
         hibernate:
-            ddl-auto: none
+            ddl-auto: update
         show-sql: true
 
 eureka:
@@ -36,6 +36,7 @@ eureka:
 spring:
     profiles: heroku
     datasource:
+        data: classpath:/sql/data.sql
         driver-class-name: org.postgresql.Driver
         username: ${JDBC_DATABASE_USERNAME}
         password: ${JDBC_DATABASE_PASSWORD}

@@ -2,10 +2,8 @@ package br.com.ricardoludwig.customer.rest;
 
 public class NullContent extends Content {
 
-	private String $name;
-
 	public String get$name() {
-		return $name;
+		return "";
 	}
 
 	public String get$email() {

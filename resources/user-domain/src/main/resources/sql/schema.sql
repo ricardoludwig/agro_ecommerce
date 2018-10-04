@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS public.tb_user (
+  username VARCHAR(50) NOT NULL PRIMARY KEY,
+  password VARCHAR(500),
+  activated BOOLEAN DEFAULT FALSE
+);
+
