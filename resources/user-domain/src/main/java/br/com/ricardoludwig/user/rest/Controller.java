@@ -44,13 +44,13 @@ public class Controller {
 	@PostMapping("/user")
 	public ResponseEntity<Response> createOne(@Valid @RequestBody UserRequestBody req) {
 
-		User urs = req.toUser();
+		User usr = req.toUser();
 
-		service.hasPersistedLogin(urs);
+		service.hasPersistedLogin(usr);
 
-		urs = service.createOne(urs);
+		usr = service.createOne(usr);
 
-		Response response = new Response(urs, "user.created");
+		Response response = new Response(new UserResponseBody(usr), "user.created");
 		response.add(linkTo(methodOn(Controller.class).createOne(req)).withSelfRel());
 
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
@@ -65,7 +65,7 @@ public class Controller {
 
 		User usr = service.findBy(username);
 
-		Response response = new Response(usr, "user.found");
+		Response response = new Response(new UserResponseBody(usr), "user.found");
 		response.add(linkTo(methodOn(Controller.class).readOne(username)).withSelfRel());
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
@@ -76,7 +76,7 @@ public class Controller {
 
 		User usr = service.updateOne(req.toUser());
 
-		Response response = new Response(usr, "user.updated");
+		Response response = new Response(new UserResponseBody(usr), "user.updated");
 		response.add(linkTo(methodOn(Controller.class).updateOne(req)).withSelfRel());
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
@@ -91,7 +91,7 @@ public class Controller {
 
 		User usr = service.disableBy(user);
 
-		Response response = new Response(usr, "user.deleted");
+		Response response = new Response(new UserResponseBody(usr), "user.deleted");
 		response.add(linkTo(methodOn(Controller.class).deleteOneByLogin(user)).withSelfRel());
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
