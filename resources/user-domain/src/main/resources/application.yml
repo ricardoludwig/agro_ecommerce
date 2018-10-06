@@ -1,6 +1,5 @@
 spring:
     datasource:
-        data: classpath:/sql/data.sql
         driver-class-name: org.postgresql.Driver
         username: lud
         password: 123456
@@ -24,7 +23,6 @@ eureka:
 spring:
     profiles: heroku
     datasource:
-        data: classpath:/sql/data.sql
         driver-class-name: org.postgresql.Driver
         username: ${JDBC_DATABASE_USERNAME}
         password: ${JDBC_DATABASE_PASSWORD}
