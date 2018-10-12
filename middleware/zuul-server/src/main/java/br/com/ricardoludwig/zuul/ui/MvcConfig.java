@@ -1,4 +1,4 @@
-package br.com.ricardoludwig.zuul.controller;
+package br.com.ricardoludwig.zuul.ui;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
