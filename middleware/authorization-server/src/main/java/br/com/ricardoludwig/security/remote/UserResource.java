@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 import br.com.ricardoludwig.security.domain.Authority;
@@ -50,9 +51,21 @@ public class UserResource {
 			RestTemplate restTemplate = new RestTemplate();
 			UserResponse urp = restTemplate.getForObject(request, UserResponse.class);
 			return urp;
+		} catch (ResourceAccessException e) {
+			return herokuFallBack(request);
 		} catch (Exception e) {
 			e.printStackTrace(); // TODO Tratar exception
 			return null;
+		}
+	}
+
+	private UserResponse herokuFallBack(String request) { //TODO - Verificar solucao para o problema de connection refused do Heroku e remover esse fallback
+		String username = request.split("=")[1];
+		try {
+			UserResponse usr = remoteCall("http://ricardoludwig-user-domain.herokuapp.com/user?username=" + username);
+			return usr;
+		} catch (Exception e) {
+			throw new IllegalStateException("Heroku fallback fail", e);
 		}
 	}
 

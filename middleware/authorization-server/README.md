@@ -17,7 +17,7 @@ GRANT
 auth_db=> GRANT ALL PRIVILEGES ON TABLE user_authority TO lud;
 
 
-curl -X POST 'localhost:7003/oauth/token?grant_type=password&username=admin&password=123456' -H 'ContentType: application/json' -H 'Authorization:Basic bWFzdGVydG9rZW46JDJhJDEwJHRybXdqUFVaRzNXZjBzaE1tN0w3MnU5ZzhBMlFOOEJMOUFabFoydU94L3ZVQTBlTG16ZTQu' -v && echo
+curl -X POST 'localhost:7003/oauth/token?grant_type=password&username=admin@teste.com.br&password=123456' -H 'ContentType: application/json' -H 'Authorization:Basic bWFzdGVydG9rZW46JDJhJDEwJHRybXdqUFVaRzNXZjBzaE1tN0w3MnU5ZzhBMlFOOEJMOUFabFoydU94L3ZVQTBlTG16ZTQu' -v && echo
 
 
 curl -X POST 'localhost:7002/oauth/token?grant_type=password&username=jurgen.klinsmann@gmail.com&password=123456' -H 'ContentType: application/json' -H 'Authorization:Basic bWFzdGVydG9rZW46JDJhJDEwJHRybXdqUFVaRzNXZjBzaE1tN0w3MnU5ZzhBMlFOOEJMOUFabFoydU94L3ZVQTBlTG16ZTQu' -v && echo
@@ -29,12 +29,12 @@ curl -X POST 'localhost:7003/user' -H 'ContentType: application/json' -H 'Author
 
 
 
----ricardoludwig-as.herokuapp.com
+---ricardoludwig-auth-server.herokuapp.com
 
 
-curl -X POST 'ricardoludwig-as.herokuapp.com/oauth/token?grant_type=password&username=admin&password=123456' -H 'ContentType: application/json' -H 'Authorization:Basic bWFzdGVydG9rZW46JDJhJDEwJHRybXdqUFVaRzNXZjBzaE1tN0w3MnU5ZzhBMlFOOEJMOUFabFoydU94L3ZVQTBlTG16ZTQu' -v && echo
+curl -X POST 'ricardoludwig-auth-server.herokuapp.com/oauth/token?grant_type=password&username=admin@teste.com.br&password=123456' -H 'ContentType: application/json' -H 'Authorization:Basic bWFzdGVydG9rZW46JDJhJDEwJHRybXdqUFVaRzNXZjBzaE1tN0w3MnU5ZzhBMlFOOEJMOUFabFoydU94L3ZVQTBlTG16ZTQu' -v && echo
 
-curl -X POST 'ricardoludwig-as.herokuapp.com/user' -H 'ContentType: application/json' -H 'Authorization:Bearer 8430e56a-4a8f-4cf8-97ff-4ad078f41d2b' -v && echo
+curl -X POST 'ricardoludwig-auth-server.herokuapp.com/user' -H 'ContentType: application/json' -H 'Authorization:Bearer 2d99aa7e-e143-4154-b257-83681075b938' -v && echo
 
 
 8430e56a-4a8f-4cf8-97ff-4ad078f41d2b

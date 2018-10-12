@@ -1,7 +1,3 @@
---CREATE TABLE IF NOT EXISTS public.authority (
---  name VARCHAR(50) NOT NULL PRIMARY KEY
---);
-
 CREATE TABLE IF NOT EXISTS public.user_authority (
     username VARCHAR(50) NOT NULL PRIMARY KEY,
     authority VARCHAR(250) NOT NULL

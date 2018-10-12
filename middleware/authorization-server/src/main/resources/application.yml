@@ -46,7 +46,7 @@ spring:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
         generate-ddl: false
         hibernate:
-            ddl-auto: none
+            ddl-auto: update
         show-sql: true
 eureka:
     instance:
