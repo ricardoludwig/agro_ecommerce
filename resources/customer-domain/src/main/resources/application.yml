@@ -1,3 +1,4 @@
+
 spring:
     datasource:
         driver-class-name: org.postgresql.Driver
@@ -11,6 +12,13 @@ spring:
         hibernate:
             ddl-auto: none
         show-sql: true
+logging:
+  level:
+    ROOT: WARN
+    org.springframework.security: ERROR
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+    br.com.ricardoludwig.customer: ERROR
 
 eureka:
   client:

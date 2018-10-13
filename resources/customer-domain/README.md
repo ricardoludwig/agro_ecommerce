@@ -23,11 +23,11 @@ Calling API interfaces locally
 
 1- Adding a customer
 	
-curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" -H 'Authorization:Bearer 0e3b38cb-0640-4e8c-b4e5-c7814b12ac0e' POST http://localhost:8082/customer -v && echo
+curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" -H 'Authorization:Bearer b18c3fc9-0dff-4274-ba77-4e7e64740d73' POST http://localhost:8082/customer -v && echo
 	
 
 
-curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" POST https://ricardoludwig-customer-domain.herokuapp.com/customer -v && echo	
+curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" -H 'Authorization:Bearer ca8a0bb3-a121-42fd-b895-32310e4e5945' POST https://ricardoludwig-customer-domain.herokuapp.com/customer -v && echo	
 	
 	
 2- Invalid Login
