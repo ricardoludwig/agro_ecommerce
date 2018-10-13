@@ -19,6 +19,13 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://localhost:7001}/eureka/
 
+authserver:
+  hostname: ${AUTHORIZATION_URL:http://localhost:7003}
+security:
+  oauth2:
+    resource:
+      userInfoUri: ${authserver.hostname}/user
+
 ---
 spring:
     profiles: heroku

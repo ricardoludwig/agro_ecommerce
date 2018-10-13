@@ -23,8 +23,9 @@ Calling API interfaces locally
 
 1- Adding a customer
 	
-	curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" POST http://localhost:7003/customer -v && echo
+curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" -H 'Authorization:Bearer 0e3b38cb-0640-4e8c-b4e5-c7814b12ac0e' POST http://localhost:8082/customer -v && echo
 	
+
 
 curl -i -d '{"name":"Jurgen Klinsmann","email":"jurgen.klinsmann@gmail.com","login":"jurgen.klinsmann@gmail.com","birthDate":"30/06/1994","document":"69569178078","typeOfDocument":"CPF","creditCard":"9999999-9","phones":"+49 391392939"}' -H "Content-Type: application/json" POST https://ricardoludwig-customer-domain.herokuapp.com/customer -v && echo	
 	
