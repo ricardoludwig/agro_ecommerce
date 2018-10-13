@@ -45,8 +45,15 @@ public class Controller {
 
 	@PostMapping("/customer")
 	public ResponseEntity<Response> createOne(@Valid @RequestBody Content req) {
-		
-		
+		return create(req);
+	}
+	
+	@PostMapping("/ui/customer")
+	public ResponseEntity<Response> uiCreateOne(@Valid @RequestBody Content req) {
+		return create(req);
+	}
+
+	private ResponseEntity<Response> create(Content req) {
 		Customer customer = req.toCustomer();
 		
 		service.hasPersistedLogin(customer);
@@ -61,7 +68,15 @@ public class Controller {
 	
 	@GetMapping("/customer")
 	public ResponseEntity<Response> readOne(@RequestParam("login") String login) {
+		return read(login);
+	}
+	
+	@GetMapping("/ui/customer")
+	public ResponseEntity<Response> uiReadOne(@RequestParam("login") String login) {
+		return read(login);
+	}
 
+	private ResponseEntity<Response> read(String login) {
 		if (StringUtils.isEmpty(login)) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -76,7 +91,15 @@ public class Controller {
 
 	@PutMapping("/customer")
 	public ResponseEntity<Response> updateOne(@Valid @RequestBody Content req) {
+		return update(req);
+	}
+	
+	@PutMapping("/ui/customer")
+	public ResponseEntity<Response> uiUpdateOne(@Valid @RequestBody Content req) {
+		return update(req);
+	}
 
+	private ResponseEntity<Response> update(Content req) {
 		Customer customer = service.updateOne(req.toCustomer());
 		
 		Response response = new Response(customer, "customer.updated");
@@ -87,7 +110,15 @@ public class Controller {
 
 	@DeleteMapping("/customer/{login}")
 	public ResponseEntity<Response> deleteOneByLogin(@PathVariable("login") String login) {
+		return delete(login);
+	}
+	
+	@DeleteMapping("/ui/customer/{login}")
+	public ResponseEntity<Response> uiDeleteOneByLogin(@PathVariable("login") String login) {
+		return delete(login);
+	}
 
+	private ResponseEntity<Response> delete(String login) {
 		if (StringUtils.isEmpty(login)) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}

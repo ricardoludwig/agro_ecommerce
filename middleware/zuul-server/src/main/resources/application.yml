@@ -1,21 +1,11 @@
 zuul:
-#    prefix: /api
     ignored-services: '*'
     routes:
-        name:
-#          path: /name/**
-          url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/Ricardo
+        catalog:
+          url: ${CATALOG_URL:http://localhost:9001}
           sensitive-headers:
-        age:
-#          path: /age/**
-          url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/age/Ludwig
-          sensitive-headers:
-        inst:
-#          path: /inst/**
-          url: https://ricardoludwig-spring-boot-demo.herokuapp.com/demo/instances/spring-boot-demo
-          sensitive-headers:
-        ui:
-          url: https://ricardoludwig-catalog.herokuapp.com
+        customer:
+          url: ${CUSTOMER_URL:http://localhost:8082}/customer
           sensitive-headers:
 security:
   sessions: ALWAYS
