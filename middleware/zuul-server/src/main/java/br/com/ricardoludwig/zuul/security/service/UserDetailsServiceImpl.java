@@ -1,6 +1,7 @@
 package br.com.ricardoludwig.zuul.security.service;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

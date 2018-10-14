@@ -21,8 +21,10 @@ public class UserResource {
 		String request = getUri() + "/user?username=" + username;
 
 		UserResponse userResponse = remoteCall(request);
+		if (userResponse == null)
+			throw new IllegalArgumentException("User not found");
+		
 		Content content = userResponse.getContent();
-
 		return content;
 	}
 
