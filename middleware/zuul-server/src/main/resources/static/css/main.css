@@ -1,9 +1,19 @@
 @charset "UTF-8";
 
+a {
+	color: #258b47;
+	font-size: 18px;
+}
+
+.body {
+	background-color: #fff; 
+}
+
 .login-popup-heading>h4 {
 	color: #258b47;
 	font-size: 18px;
 	line-height: 30px;
+	text-align: center;
 }
 
 .new_reg_popup, .new_login_popup {
@@ -30,15 +40,36 @@
 	-o-transition: all 700ms ease;
 }
 
-a {
-	color: #258b47;
-	font-size: 18px;
+.footer {
+  color: #262626;
+  padding: 10% 2% 10% 1%;
+}
+
+.footer p {
+  font-size: 1em;
+}
+
+.footer span {
+  margin: 2%;
+}
+
+.copyright {
+  	display: inline-block;
+  	width: 55%;
+  }
+
+.logo {
+  max-width: 40%;
+  height: auto;
+  background-color: #fff;
 }
 
 .invalid-login {
 	color: crimson;
+	margin-bottom: 3%;
 }
 
 .logout {
 	color: crimson;
+	margin-bottom: 3%;
 }
