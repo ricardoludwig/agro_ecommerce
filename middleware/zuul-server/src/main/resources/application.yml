@@ -1,12 +1,11 @@
 zuul:
     ignored-services: '*'
+    sensitiveHeaders: Cookie,Set-Cookie
     routes:
         catalog:
           url: ${CATALOG_URL:http://localhost:9001}
-          sensitive-headers:
         customer:
           url: ${CUSTOMER_URL:http://localhost:8082}/customer
-          sensitive-headers:
 security:
   sessions: ALWAYS
   ignored:
