@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/index", "/js/*", "/css/*", "/fonts/*", "/favicon.ico").permitAll()
+                .antMatchers("/", "/index", "/js/*", "/css/*", "/img/*", "/fonts/*", "/favicon.ico").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .logout()

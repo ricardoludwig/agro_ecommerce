@@ -1,13 +1,105 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Catalog Under Construction</title>
-    </head>
-    <body>
-        <h1 th:inline="text">Hello Catalog [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-    </body>
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PPEA Peak Performance English Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Curso online de inglês" />
+    <meta name="keywords" content="english, course, curso, inglês" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Monsterrat:400,700|Merriweather:400,300italic,700" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/stylesheets/normalize.css">
+    <link rel="stylesheet" href="css/catalog.css">
+
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+    
+		<section class="menu">
+			<form th:action="@{/logout}" method="post">
+	            <input class="btn btn-success btn-outline btn-logout" type="submit" value="SAIR"/>
+	        </form>
+		</section>    
+    
+        <section class="planos clearfix">
+        
+            <h2 class="page-planos-h2">Produtos</h2>
+
+            <div class="produtos">
+                <div class="plano col-md-4 col-sm-6 col-xs-12 col-xxs-12">
+                    <h3 class="plano-titulo">Banana</h3>
+                    <div class="preco"><span class="moeda">R$</span>5,00</div>
+                    <p>Banana Prata direto do produtor.</p>
+                    <a href="#" class="btn btn-success btn-outline">Comprar</a>
+                </div>
+
+                <div class="plano col-md-4 col-sm-6 col-xs-12 col-xxs-12">
+                    <h3 class="plano-titulo">Maçã</h3>
+                    <div class="preco"><span class="moeda">R$</span>4,00</div>
+                    <p>Maçã Prata direto do produtor.</p>
+                    <a href="#" class="btn btn-success btn-outline">Comprar</a>
+                </div>
+
+                <div class="plano col-md-4 col-sm-6 col-xs-12 col-xxs-12">
+                    <h3 class="plano-titulo">Batata</h3>
+                    <div class="preco"><span class="moeda">R$</span>3,00</div>
+                    <p>Batata Prata direto do produtor.</p>
+                    <a href="#" class="btn btn-success btn-outline">Comprar</a>
+                </div>
+
+                <div class="plano col-md-4 col-sm-6 col-xs-12 col-xxs-12">
+                    <h3 class="plano-titulo">Manga</h3>
+                    <div class="preco"><span class="moeda">R$</span>5,00</div>
+                    <p>Manga Prata direto do produtor.</p>
+                    <a href="#" class="btn btn-success btn-outline">Comprar</a>
+                </div>
+
+                <div class="plano col-md-4 col-sm-6 col-xs-12 col-xxs-12">
+                    <h3 class="plano-titulo">Uva</h3>
+                    <div class="preco"><span class="moeda">R$</span>4,00</div>
+                    <p>Uva Prata direto do produtor.</p>
+                    <a href="#" class="btn btn-success btn-outline">Comprar</a>
+                </div>
+
+                <div class="plano col-md-4 col-sm-6 col-xs-12 col-xxs-12">
+                    <h3 class="plano-titulo">Melancia</h3>
+                    <div class="preco"><span class="moeda">R$</span>3,00</div>
+                    <p>Melancia Prata direto do produtor.</p>
+                    <a href="#" class="btn btn-success btn-outline">Comprar</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="footer">
+            <div class="copyright">
+                <img class="logo" src="img/logo-1x.png">
+                <p class="copy">&copy; Agro e-commerce demo.
+                    <br/> CNPJ: 00.00.000/0000-00 Todos os direitos reservados.
+                </p>
+            </div>
+        </section>
+
+    </div>
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
