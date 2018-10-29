@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:gs="http://ricardoludwig-quotation.com.br/web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getProductRequest>
+      	<gs:product>
+      		<gs:name>banana</gs:name>
+      		<gs:amount>12</gs:amount>
+      	</gs:product>
+      	<gs:product>
+      		<gs:name>maca</gs:name>
+      		<gs:amount>2</gs:amount>
+      	</gs:product>
+      </gs:getProductRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
