@@ -18,13 +18,12 @@ public class CPFTest {
 	}
 
 	@Test
-	public void giveAValidCPFVerifyIfTrueTest() {
+	public void given_CPF_verify_If_valid() {
 		assertTrue(valid.isValid());
 	}
 
 	@Test
-	public void giveAInvalidCPFVerifyIfFalseTest() {
+	public void given_CPF_verify_If_invalid() {
 		assertFalse(inValid.isValid());
 	}
-
 }

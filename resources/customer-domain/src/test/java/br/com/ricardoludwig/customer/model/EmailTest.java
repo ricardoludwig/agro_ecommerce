@@ -16,15 +16,15 @@ public class EmailTest {
 		valid = new Email("ricardo.ludwig@gmail.com");
 		inValid = new Email("ricardo.ludwig.gmail.com");
 	}
-
+	
 	@Test
-	public void giveATrueEmailVerifyIfIsValid() {
+	public void given_Email_verify_If_valid() {
 		assertTrue(valid.isValid());
 	}
 
 	@Test
-	public void giveAFalseEmailVerifyIfIsValid() {
+	public void given_Email_verify_If_invalid() {
 		assertFalse(inValid.isValid());
 	}
-
+	
 }

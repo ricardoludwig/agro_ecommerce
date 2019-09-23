@@ -17,44 +17,40 @@ public class LegalPersonTest {
 	@Before
 	public void setUp() {
 
-		try {
 			withValidAttribs = new LegalPerson.Builder()
 					.name("Old Mac Donald's Farm")
 					.login("omd@g.co")
 					.email("omd@g.co")
 					.document(new CNPJ("47508411000156"))
 					.builder();
-		} catch (Exception e) {
-			//Do nothing, just to prevent broke all tests when create a by mistake a wrong new object's instance.
-		}
 	}
 
 	@Test
-	public void giveAValidNameResultIsTrueTest() {
+	public void given_valid_name() {
 		boolean name = withValidAttribs.hasName();
 		assertTrue(name);
 	}
 	
 	@Test
-	public void giveAValidLoginResultIsTrueTest() {
+	public void given_valid_login() {
 		boolean login = withValidAttribs.hasLogin();
 		assertTrue(login);
 	}
 	
 	@Test
-	public void giveAValidEmailResultIsTrueTest() {
+	public void given_valid_email() {
 		boolean login = withValidAttribs.hasEmail();
 		assertTrue(login);
 	}
 	
 	@Test
-	public void giveAValidDocumentResultIsTrueTest() {
+	public void given_valid_document() {
 		boolean doc = withValidAttribs.hasDocument();
 		assertTrue(doc);
 	}
 
 	@Test(expected = InvalidNameException.class)
-	public void giveAInvalidNameThrowExceptionTest() {
+	public void given_a_invalid_name() {
 		new LegalPerson.Builder()
 				.name("J")
 				.login("jax9@gmail.com")
@@ -62,7 +58,7 @@ public class LegalPersonTest {
 	}
 	
 	@Test(expected = InvalidLoginException.class)
-	public void giveAInvalidLoginThrowExceptionTest() {
+	public void given_invalid_login() {
 		new LegalPerson.Builder()
 				.name("Old Mac Donald's Farm")
 				.email("jax9@gmail.com")
@@ -71,7 +67,7 @@ public class LegalPersonTest {
 	}
 	
 	@Test(expected = InvalidEmailException.class)
-	public void giveAInvalidEmailThrowExceptionTest() {
+	public void given_invalid_email() {
 		new LegalPerson.Builder()
 				.name("Old Mac Donald's Farm")
 				.login("omd@g.co")
@@ -80,7 +76,7 @@ public class LegalPersonTest {
 	}
 	
 	@Test
-	public void giveAInvalidDocThrowExceptionTest() {
+	public void given_invalid_document() {
 		
 		LegalPerson person = new LegalPerson.Builder()
 				.name("Old Mac Donald's Farm")

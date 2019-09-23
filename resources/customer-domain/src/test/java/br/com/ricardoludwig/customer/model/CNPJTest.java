@@ -18,12 +18,12 @@ public class CNPJTest {
 	}
 
 	@Test
-	public void giveAValidCNPJVerifyIfTrueTest() {
+	public void given_CNPJ_verify_If_valid() {
 		assertTrue(valid.isValid());
 	}
 
 	@Test
-	public void giveAInvalidCNPJVerifyIfFalseTest() {
+	public void given_CNPJ_verify_If_invalid() {
 		assertFalse(inValid.isValid());
 	}
 
